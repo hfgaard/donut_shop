@@ -4,34 +4,34 @@ function DonutShop(name, minHourlyCustomers, maxHourlyCustomers, aveDonutsPerCus
   this.minHourlyCustomers  = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
   this.aveDonutsPerCustomer = aveDonutsPerCustomer;
+}
   
-  this.render = function(perHour) {
-    var node = document.createElement("td");
-    node.innerHTML = perHour;
-    return node;
-  }
-  
-  this.purchasingCustomers = function() {
-    return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
-  }
-  
-  this.bakePerHour = function() {
-    return Math.floor(this.purchasingCustomers() * this.aveDonutsPerCustomer);
-  }
+DonutShop.prototype.render = function(perHour) {
+  var node = document.createElement("td");
+  node.innerHTML = perHour;
+  return node;
+}
 
-  this.bakePerDay = function(id) {
-    var total = 0;
-    var baked = 0;
-    var parent = document.getElementById(id);
-    parent.appendChild(this.render(this.name));
+DonutShop.prototype.purchasingCustomers = function() {
+  return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
+}
 
-    for (var i = 0; i <= this.operationsHours; i++) {
-      baked = this.bakePerHour();
-      total += baked;
-      parent.appendChild(this.render(baked));
-    }
-    parent.appendChild(this.render(total));
+DonutShop.prototype.bakePerHour = function() {
+  return Math.floor(this.purchasingCustomers() * this.aveDonutsPerCustomer);
+}
+
+DonutShop.prototype.bakePerDay = function(id) {
+  var total = 0;
+  var baked = 0;
+  var parent = document.getElementById(id);
+  parent.appendChild(this.render(this.name));
+
+  for (var i = 0; i <= this.operationsHours; i++) {
+    baked = this.bakePerHour();
+    total += baked;
+    parent.appendChild(this.render(baked));
   }
+  parent.appendChild(this.render(total));
 }
 
 var downtown = new DonutShop("Downtown", 8, 43, 4.50);
