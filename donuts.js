@@ -1,5 +1,5 @@
 function DonutShop(name, minHourlyCustomers, maxHourlyCustomers, aveDonutsPerCustomer) {
-  this.operationsHours = 12;
+  this.operationsHours = 11;
   this.name = name;
   this.minHourlyCustomers  = minHourlyCustomers;
   this.maxHourlyCustomers = maxHourlyCustomers;
@@ -25,7 +25,7 @@ function DonutShop(name, minHourlyCustomers, maxHourlyCustomers, aveDonutsPerCus
     var parent = document.getElementById(id);
     parent.appendChild(this.render(this.name));
 
-    for (var i = 0; i < this.operationsHours; i++) {
+    for (var i = 0; i <= this.operationsHours; i++) {
       baked = this.bakePerHour();
       total += baked;
       parent.appendChild(this.render(baked));
