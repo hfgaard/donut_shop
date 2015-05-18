@@ -1,0 +1,1 @@
+This program calculates the number of donuts each Top Pot franchise needs to bake per hour of operation. These numbers are calculated based on the number of customers each location expects per hour and the average number of donuts each customer generally buys. This is then printed out to a table so that it can be easily accessed by any of the locations.
