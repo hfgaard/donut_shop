@@ -24,10 +24,10 @@ DonutShop.prototype.bakePerDay = function() {
     this.donutsPerHour[i] = donutsPerHour;
     total += donutsPerHour;
   }
-  return total
+  return total;
 }
 
-DonutShop.prototype.renderData = function() {
+DonutShop.prototype.render = function() {
   var node, row, tableLocation;
   
   node = document.createElement("td");
@@ -58,5 +58,44 @@ locations.push(new DonutShop("Wedgewood", 2, 28, 1.25));
 locations.push(new DonutShop("Ballard", 8, 58, 3.75));
 
 for (var i = 0; i < locations.length; i++) {
-  locations[i].renderData();
+  locations[i].render();
 }
+
+var submitButton = document.getElementById("submit");
+var newLocation = document.getElementById("location");
+var newMinCust = document.getElementById("minCust");
+var newMaxCust = document.getElementById("maxCust");
+var newAvePerCust = document.getElementById("avePerCust");
+
+var updateLocation = function(arrayLocation) {
+  var updateShop = new DonutShop(newLocation.value, newMinCust.value, newMaxCust.value, newAvePerCust.value);
+  locations.splice(arrayLocation, 1, updateShop);
+  var list = document.getElementsByTagName("tr");
+  var updateList = list[arrayLocation + 1].childNodes;
+  
+  for (var i = 0; i <= updateShop.operationsHours; i++) {
+    updateList[i + 1].textContent = updateShop.donutsPerHour[i];
+  }
+  updateList[updateList.length - 1].textContent = updateShop.totalDonuts;
+}
+
+var submitLocation = function() {
+  var existingLocation = false;
+  var arrayLocation = 0;
+  
+  for (var i = 0; i < locations.length; i++) {
+    if (newLocation.value == locations[i].name) {
+      existingLocation = true;
+      arrayLocation = i;
+    }
+  }
+
+  if (existingLocation) {
+    updateLocation(arrayLocation);
+  } else { 
+    locations.push(new DonutShop(newLocation.value, newMinCust.value, newMaxCust.value, newAvePerCust.value)); 
+    locations[locations.length - 1].render();
+  }
+}
+
+submitButton.addEventListener('click', submitLocation, false);
