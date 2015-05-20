@@ -7,7 +7,7 @@ function DonutShop(name, minHourlyCustomers, maxHourlyCustomers, aveDonutsPerCus
   this.donutsPerHour = [];
   this.totalDonuts = this.bakePerDay();
 }
-  
+
 
 DonutShop.prototype.purchasingCustomers = function() {
   return Math.floor(Math.random() * (this.maxHourlyCustomers - this.minHourlyCustomers) + this.minHourlyCustomers);
@@ -29,10 +29,10 @@ DonutShop.prototype.bakePerDay = function() {
 
 DonutShop.prototype.render = function() {
   var node, row, tableLocation;
-  
-  node = document.createElement("td");
+
+  node = document.createElement("th");
   node.textContent = this.name;
-  
+
   row = document.createElement("tr");
   row.appendChild(node);
 
@@ -44,7 +44,7 @@ DonutShop.prototype.render = function() {
     node.textContent = this.donutsPerHour[i];
     row.appendChild(node);
   }
-  
+
   node = document.createElement("td");
   node.textContent = this.totalDonuts;
   row.appendChild(node);
@@ -72,7 +72,7 @@ var updateLocation = function(arrayLocation) {
   locations.splice(arrayLocation, 1, updateShop);
   var list = document.getElementsByTagName("tr");
   var updateList = list[arrayLocation + 1].childNodes;
-  
+
   for (var i = 0; i <= updateShop.operationsHours; i++) {
     updateList[i + 1].textContent = updateShop.donutsPerHour[i];
   }
@@ -82,7 +82,7 @@ var updateLocation = function(arrayLocation) {
 var submitLocation = function() {
   var existingLocation = false;
   var arrayLocation = 0;
-  
+
   for (var i = 0; i < locations.length; i++) {
     if (newLocation.value == locations[i].name) {
       existingLocation = true;
@@ -92,8 +92,8 @@ var submitLocation = function() {
 
   if (existingLocation) {
     updateLocation(arrayLocation);
-  } else { 
-    locations.push(new DonutShop(newLocation.value, newMinCust.value, newMaxCust.value, newAvePerCust.value)); 
+  } else {
+    locations.push(new DonutShop(newLocation.value, newMinCust.value, newMaxCust.value, newAvePerCust.value));
     locations[locations.length - 1].render();
   }
 }
