@@ -6,4 +6,7 @@ Added CSS styling fonts used from:
 
 Colors Pulled from:
 
-https://color.adobe.com/KnotJustNautical-color-theme-2565165/
+https://color.adobe.com/Neutral-Blue-color-theme-22361/
+
+Collaborated with Nick Kuhn.
+In class Alex showed how she was able to get every other line on the table a different color. I used that idea to style my table.
