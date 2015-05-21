@@ -79,7 +79,8 @@ var updateLocation = function(arrayLocation) {
   updateList[updateList.length - 1].textContent = updateShop.totalDonuts;
 }
 
-var submitLocation = function() {
+var submitLocation = function(e) {
+  e.preventDefault();
   var existingLocation = false;
   var arrayLocation = 0;
 

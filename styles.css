@@ -1,27 +1,33 @@
-
-* {
-  box-sizing: border-box;
-}
-/*Place <box-sizing: inherit;> inside the selector*/
-
 body {
   font-family: "Roboto Condensed", sans-serif;
-  background-color: #C4D7ED;
-  color: #2C3E50;
+  color: #193441;
+  background: url("TopPotLogoOpt.jpg") no-repeat center bottom;
 }
 
 header {
   text-align: center;
-  padding: 10px 0;
-  width: 300px;
-  float: left;
+  padding: 1% 0;
+  width: 25%;
   display:block;
-  background-color: #2C3E50;
-  color: #D7DADB;
+  background-color: #193441;
+  color: #D1DBBD;
   border-bottom-right-radius: 10px;
   margin-right: 20px;
-  margin-bottom: 10px;
+  position: fixed;
+}
 
+/*Used Clearfix hack from https://css-tricks.com/snippets/css/clear-fix/*/
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix { 
+  display: inline-block;
 }
 
 h1, h2, th {
@@ -29,31 +35,36 @@ h1, h2, th {
   font-weight: bold;
 }
 
+h1 {
+  font-size: 24pt;
+}
+
 h2 {
   padding-top: 10px;
+  font-size: 16pt;
 }
 
-main>h2 {
-  background-color: #D7DADB;
-}
-
-main>p {
-  background-color: #D7DADB;
-  padding-bottom: 10px;
+.welcome {
+  background-color: #91AA9D;
+  padding: 0 10px 10px 10px;
+  position: relative;
+  left: 25%;
+  width: 75%;
+  border-bottom-left-radius: 10px;
 }
 
 table {
-  margin-top: 20px;
-  border: 2px solid #2C3E50;
-  border-radius: 5px;
-  margin: 20px auto 20px auto;
-  border-collapse: collapse;
-  box-shadow: 0 0 10px #777777;
+  margin: 100px 20px 20px 20px;
+  border: 2px solid #193441;
+  border-collapse: separate;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #91AA9D;
+  float: left;
 }
 
 table th{
   text-align: left;
-  padding: 1px 5px;
+  padding: 3px 5px;
 }
 
 table td {
@@ -61,24 +72,27 @@ table td {
 }
 
 tr:nth-child(odd) {
-  background-color: #6DBCDB;
+  background-color: #D1DBBD;
 }
 
 tr:nth-child(even) {
-  background-color: #D7DADB;
+  background-color: #FCFFF5;
 }
 
 table td:hover {
-  background-color: #FC4349;
+  background-color: #3E606F;
+  color: #FCFFF5;
 }
 
 fieldset{
-  border: 1px solid #2C3E50;
+  border: 1px solid #193441;
   border-radius: 5px;
-  width: 300px;
-  margin: 0 auto;
+  width: 85px;
   padding: 10px;
-  background-color: #6DBCDB;
+  background-color: #D1DBBD;
+  box-shadow: 0 0 10px #91AA9D;
+  float: left;
+  margin-top: 100px;
 }
 
 fieldset h2 {
@@ -92,32 +106,37 @@ fieldset p {
 }
 
 fieldset label {
-  display:inline-block;
-  width: 300px;
+  display: block;
+  width: 130px;
   text-align: right;
-  padding-right: 10px;
 }
 
 fieldset input {
-  display:inline-block;
-  height:18px;
-}
-
-form {
-  width:600px;
+  display: block;
+  height: 18px;
 }
 
 input {
-  background-color: #D7DADB;
+  background-color: #FCFFF5;
   border-radius: 7px;
 }
 
 #submit {
-  background-color: #D7DADB;
+  background-color: #FCFFF5;
   border-radius: 5px;
   font-family: "Roboto", sans-serif;
+  display: block;
+  margin-left: 82px;
 }
 
 #submit:hover {
-  background-color: #FC4349;
+  background-color: #3E606F;
+  color: #FCFFF5;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  font-size: 10pt;
+  z-index: -1;
 }
