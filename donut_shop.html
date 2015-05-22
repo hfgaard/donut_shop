@@ -11,38 +11,37 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <header>
+    <header class="clearfix">
+      <img src="TopPotLogo.png" alt="Top Pot Logo" class="logo" />
       <h1>Top Pot Donuts</h1>
     </header>
     <main>
-      <section class="welcome">
+      <section class="welcome clearfix">
         <h2>Welcome Top Pot employee!</h2>
         <p>We have calculated the number of donuts you will need to bake today based on the location where you are working. Please reference this table throughout the day to target the number of donuts you need to bake.</p>
       </section>
-      <section class="data"> 
-        <table class="clearfix">
-          <thead>
-            <tr>
-              <th></th>
-              <th>7:00 AM</th>
-              <th>8:00 AM</th>
-              <th>9:00 AM</th>
-              <th>10:00 AM</th>
-              <th>11:00 AM</th>
-              <th>12:00 PM</th>
-              <th>1:00 PM</th>
-              <th>2:00 PM</th>
-              <th>3:00 PM</th>
-              <th>4:00 PM</th>
-              <th>5:00 PM</th>
-              <th>6:00 PM</th>
-              <th>Total</th>
-            </tr>
-          </thead>
-          <tbody id="donut-table">
-          </tbody>
-        </table>
-      </section>
+      <table class="clearfix">
+        <thead>
+          <tr>
+            <th></th>
+            <th>7:00 AM</th>
+            <th>8:00 AM</th>
+            <th>9:00 AM</th>
+            <th>10:00 AM</th>
+            <th>11:00 AM</th>
+            <th>12:00 PM</th>
+            <th>1:00 PM</th>
+            <th>2:00 PM</th>
+            <th>3:00 PM</th>
+            <th>4:00 PM</th>
+            <th>5:00 PM</th>
+            <th>6:00 PM</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="donut-table">
+        </tbody>
+      </table>
       <fieldset class="clearfix">
         <h2>New Locations/Updating a Location</h2>
         <p>Please use the form below to add a new location or update information on an existing location.</p>
@@ -58,9 +57,7 @@
           <button id="submit">Submit</button>
         </form>
       </fieldset>
-      <footer>
-        <p>Created By: Hana Fallisgaard</p>
-      </footer>
+      <img src="TopPotLogoOpt.jpg" alt="Top Pot Logo" class="background" />
     </body>
     <script src="donuts.js" type="text/javascript"></script>
   </body>
